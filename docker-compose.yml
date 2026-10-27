@@ -15,7 +15,7 @@ services:
       - springboot-postgres-net
 
   backend:
-    image: 240030462/docker-backend-2400030462:latest
+    image: 2400030462/docker-backend-2400030462:latest
     container_name: docker-springboot
     ports:
       - "9081:9081"
