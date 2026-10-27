@@ -4,10 +4,10 @@ name: Docker Fullstack
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   build-and-push:
@@ -42,4 +42,4 @@ jobs:
           context: ./CanteenOrder-frontend
           file: ./CanteenOrder-frontend/frontend.Dockerfile
           push: true
-          tags: j2400030462/docker-frontend-2400030462:latest
+          tags: 2400030462/docker-frontend-2400030462:latest
