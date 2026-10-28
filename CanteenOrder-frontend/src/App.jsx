@@ -13,11 +13,11 @@ const emptyForm = {
 
 function normalizeOrder(item) {
   return {
-    id: item.id ?? item.oid,
-    orderCode: item.orderCode ?? item.ordercode ?? '',
-    itemCount: item.itemCount ?? item.itemcount ?? '',
-    totalCost: item.totalCost ?? item.totalcost ?? '',
-    pickupStatus: item.pickupStatus ?? item.pickupstatus ?? '',
+    id: item.id,
+    orderCode: item.ordercode ?? '',
+    itemCount: item.itemcount ?? 0,
+    totalCost: item.totalcost ?? 0,
+    pickupStatus: item.pickupstatus ?? ''
   };
 }
 
@@ -110,10 +110,10 @@ export default function App() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          orderCode: form.orderCode.trim(),
-          itemCount: Number(form.itemCount),
-          totalCost: Number(form.totalCost),
-          pickupStatus: form.pickupStatus,
+          ordercode: form.orderCode.trim(),
+          itemcount: Number(form.itemCount),
+          totalcost: Number(form.totalCost),
+          pickupstatus: form.pickupStatus
         }),
       });
       if (!response.ok) {
