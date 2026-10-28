@@ -20,7 +20,20 @@ import com.klef.soa.docker.service.CanteenService;
 
 @RestController
 @RequestMapping("/canteen")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(
+    origins = {
+        "http://localhost:3000",
+        "http://localhost:5173"
+    },
+    allowedHeaders = "*",
+    methods = {
+        RequestMethod.GET,
+        RequestMethod.POST,
+        RequestMethod.PUT,
+        RequestMethod.DELETE,
+        RequestMethod.OPTIONS
+    }
+)
 public class CanteenController {
 
     @Autowired
